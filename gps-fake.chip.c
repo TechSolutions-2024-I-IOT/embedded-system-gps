@@ -1,13 +1,3 @@
-  // For information and examples see:
-  // https://link.wokwi.com/custom-chips-alpha
-  //
-  // SPDX-License-Identifier: MIT
-  // Copyright (C) 2022 Uri Shaked / wokwi.com
-
-  // https://wokwi.com/makers/urish
-
-  // original project https://wokwi.com/projects/333785509332517459
-
   #include "wokwi-api.h"
   #include <stdio.h>
   #include <stdlib.h>
@@ -146,9 +136,9 @@
     chip_state_t *chip = (chip_state_t*) user_data;
 
     printf("chip_timer_event\n");
-//  printf ("LEN(gps_tx_data):  %d\n", LEN(gps_tx_data)   );    // number of messages
-//  printf ("message length  :  %d\n", strlen(message)    );    // actual message length
-//  printf ("gps_tx_index    :  %u\n", chip->gps_tx_index );    // message index
+ printf ("LEN(gps_tx_data):  %d\n", LEN(gps_tx_data)   );    // number of messages
+// printf ("message length  :  %d\n", strlen(message)    );    // actual message length
+printf ("gps_tx_index    :  %u\n", chip->gps_tx_index );    // message index
 
     const char * message = gps_tx_data[chip->gps_tx_index++];
 
