@@ -10,6 +10,8 @@ private:
     GPSModule gpsModule;
     GPSData gpsData;
     WiFiBackendManager wifiManager;
+    unsigned long lastSendTime;
+    const unsigned long sendInterval = 10000;
 
 public:
     Device();

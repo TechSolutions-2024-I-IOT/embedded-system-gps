@@ -5,18 +5,18 @@
 #include <HTTPClient.h>
 
 class WiFiBackendManager {
-  private:
+private:
     HTTPClient client_http;
     const char* ssid;
     const char* password;
     const char* backendUrl;
-    int busId;
+    int unitBusId;
 
-  public:
+public:
     WiFiBackendManager();
     WiFiBackendManager(const char* ssid, const char* password, const char* backendUrl);
     void connectWifi();
-    void sendData(float latitude, float longitude);
+    void sendData(float latitude, float longitude, float speed);
     void setBusId(int id);
     bool isConnected();
 };

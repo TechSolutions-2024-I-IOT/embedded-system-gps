@@ -10,6 +10,7 @@ void Device::setup() {
     gpsModule.begin(115200);
     wifiManager.connectWifi();
     wifiManager.setBusId(BUS_ID);
+    lastSendTime = 0;
 }
 
 void Device::loop() {
@@ -19,5 +20,10 @@ void Device::loop() {
     gpsData.longitude = gpsModule.getLongitude();
     gpsData.speed = gpsModule.getSpeed();
 
-    wifiManager.sendData(gpsData.latitude, gpsData.longitude);
+    // Enviar datos al backend
+    unsigned long currentTime = millis();
+    if (currentTime - lastSendTime >= sendInterval) {
+        wifiManager.sendData(gpsData.latitude, gpsData.longitude, gpsData.speed);
+        lastSendTime = currentTime;
+    }
 }

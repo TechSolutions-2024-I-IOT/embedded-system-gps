@@ -8,6 +8,6 @@
 #define BUS_ID 1
 
 // Backend URL
-#define EDGE_BACKEND_URL "https://taskedgelayerservice.azurewebsites.net/api/v1/sensor-data"
+#define EDGE_BACKEND_URL "https://edgebackendchapatubus.azurewebsites.net/api/v1/location-batch/receive-bus-location"
 
 #endif
